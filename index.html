@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triumph Bra - Nyaman & Berkualitas untuk Wanita Modern</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, #f9d5e5 0%, #e3edf7 100%);
+        }
+        
+        .product-shadow {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+        }
+        
+        .testimonial-card {
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.9);
+        }
+        
+        .modal-content {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+        
+        @keyframes zoom {
+            from {transform:scale(0)} 
+            to {transform:scale(1)}
+        }
+        
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .new-order-popup {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 50;
+            animation: slideIn 0.5s forwards;
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        
+        .slideOut {
+            animation: slideOut 0.5s forwards;
+        }
+        
+        @keyframes slideOut {
+            from { transform: translateY(0); opacity: 1; }
+            to { transform: translateY(100px); opacity: 0; }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        
+        .strikethrough {
+            position: relative;
+        }
+        
+        .strikethrough:before {
+            position: absolute;
+            content: "";
+            left: 0;
+            top: 50%;
+            right: 0;
+            border-top: 2px solid #ef4444;
+            transform: rotate(-10deg);
+        }
+        
+        .floating {
+            animation-name: floating;
+            animation-duration: 3s;
+            animation-iteration-count: infinite;
+            animation-timing-function: ease-in-out;
+        }
+        
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, 15px); }
+            100% { transform: translate(0, -0px); }
+        }
+        .back-notification {
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-white">
+    <!-- Header -->
+    <header class="sticky top-0 z-40 bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center">
+                <img src="https://www.nicepng.com/png/full/277-2777377_triumph-logo-triumph-lingerie-logo.png" alt="Triumph Logo" class="h-10 md:h-12">
+                <span class="ml-2 text-xl md:text-2xl font-bold text-pink-600">Triumph</span>
+            </div>
+            <div class="flex items-center space-x-4">
+                <div class="hidden md:flex items-center space-x-1 text-sm bg-pink-50 px-3 py-1 rounded-full">
+                    <i class="fas fa-users text-pink-500"></i>
+                    <span id="viewer-count" class="font-medium text-pink-800">1,248</span>
+                    <span class="text-pink-600">sedang melihat</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-1 text-sm bg-amber-50 px-3 py-1 rounded-full">
+                    <i class="fas fa-box-open text-amber-500"></i>
+                    <span id="stock-count" class="font-medium text-amber-800">12</span>
+                    <span class="text-amber-600">stok tersisa</span>
+                </div>
+                <a href="#order" class="bg-pink-600 hover:bg-pink-700 text-white px-4 py-2 rounded-full font-medium transition duration-300">
+                    <i class="fas fa-shopping-bag mr-1"></i> Beli Sekarang
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="gradient-bg">
+        <div class="container mx-auto px-4 py-12 md:py-16">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <div class="relative">
+                        <img src="https://estoretime.com/cdn/shop/products/doreenmoody1.jpg?v=1704783708&width=600" alt="Triumph Bra" class="w-full rounded-lg product-shadow floating">
+                        <div class="absolute -top-3 -left-3 bg-red-500 text-white px-3 py-1 rounded-full font-bold text-sm animate-pulse">
+                            PROMO!
+                        </div>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">Triumph Bra Premium</h1>
+                    <p class="text-lg md:text-xl text-gray-700 mb-6">Kenyamanan Tanpa Kompromi untuk Wanita Modern</p>
+                    
+                    <div class="flex items-center mb-6">
+                        <div class="flex items-center">
+                            <div class="flex">
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                                <i class="fas fa-star text-yellow-400"></i>
+                            </div>
+                            <span class="ml-2 text-gray-700">4.9 (1.248 ulasan)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="mb-6 bg-white p-3 rounded-lg shadow-md">
+                        <div class="flex items-end gap-2">
+                            <div class="text-3xl font-bold text-pink-600">Rp183.000</div>
+                            <div class="bg-pink-600 text-white text-sm font-bold px-2 py-1 rounded">-32%</div>
+                        </div>
+                        <div class="flex items-center gap-2 mt-1">
+                            <div class="text-gray-500 text-sm line-through">Rp268.000</div>
+                            <div class="text-green-600 text-sm font-medium">Hemat Rp85.000</div>
+                        </div>
+                        <div class="mt-2 text-xs text-gray-500">
+                            <i class="fas fa-fire text-orange-500 mr-1"></i> Promo berlaku hingga 24 jam
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white rounded-lg p-4 mb-6 border border-pink-200">
+                        <div class="flex items-center">
+                            <div class="bg-pink-100 rounded-full p-2 mr-3">
+                                <i class="fas fa-truck text-pink-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">GRATIS ONGKIR</p>
+                                <p class="text-sm text-gray-600">Khusus pembayaran transfer hari ini</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-yellow-50 border border-yellow-200 rounded-lg p-4 mb-6">
+                        <div class="flex items-start">
+                            <div class="bg-yellow-100 rounded-full p-2 mr-3">
+                                <i class="fas fa-clock text-yellow-600"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-gray-800">PROMO BERAKHIR DALAM:</p>
+                                <div id="countdown" class="flex space-x-2 mt-1">
+                                    <div class="bg-white px-2 py-1 rounded text-center">
+                                        <span class="font-bold text-lg text-yellow-600" id="hours">12</span>
+                                        <span class="block text-xs text-gray-500">Jam</span>
+                                    </div>
+                                    <div class="bg-white px-2 py-1 rounded text-center">
+                                        <span class="font-bold text-lg text-yellow-600" id="minutes">45</span>
+                                        <span class="block text-xs text-gray-500">Menit</span>
+                                    </div>
+                                    <div class="bg-white px-2 py-1 rounded text-center">
+                                        <span class="font-bold text-lg text-yellow-600" id="seconds">30</span>
+                                        <span class="block text-xs text-gray-500">Detik</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#order" class="block w-full bg-pink-600 hover:bg-pink-700 text-white text-center font-bold py-3 px-6 rounded-lg transition duration-300 mb-4">
+                        <i class="fas fa-shopping-bag mr-2"></i> BELI SEKARANG
+                    </a>
+                    
+                    <p class="text-center text-sm text-gray-600">
+                        <i class="fas fa-lock mr-1"></i> Pembayaran aman melalui sistem terenkripsi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Kenapa Memilih Triumph Bra?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Didesain khusus untuk memberikan kenyamanan maksimal sepanjang hari</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-pink-50 rounded-xl p-6 text-center">
+                    <div class="bg-pink-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-heart text-pink-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Nyaman Sepanjang Hari</h3>
+                    <p class="text-gray-600">Bahan premium yang lembut dan elastis, memberikan dukungan sempurna tanpa rasa sesak.</p>
+                </div>
+                
+                <div class="bg-blue-50 rounded-xl p-6 text-center">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-leaf text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Ramah Kulit</h3>
+                    <p class="text-gray-600">Bahan hypoallergenic yang aman untuk kulit sensitif, mengurangi iritasi dan alergi.</p>
+                </div>
+                
+                <div class="bg-purple-50 rounded-xl p-6 text-center">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i class="fas fa-shield-alt text-purple-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Dukungan Optimal</h3>
+                    <p class="text-gray-600">Desain penyangga yang inovatif memberikan dukungan maksimal tanpa kawat yang menusuk.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="py-12 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Galeri Produk</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Lihat detail kualitas dan desain Triumph Bra</p>
+            </div>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+                <div class="cursor-pointer" onclick="openModal('https://estoretime.com/cdn/shop/files/z01hq342705w.jpg?v=1704783708&width=600')">
+                    <img src="https://estoretime.com/cdn/shop/files/z01hq342705w.jpg?v=1704783708&width=600" alt="Triumph Bra Detail" class="w-full h-auto rounded-lg product-shadow hover:opacity-90 transition duration-300">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://estoretime.com/cdn/shop/files/406059706_122156980568009848_407227644993963468_n.jpg?v=1704785447&width=600')">
+                    <img src="https://estoretime.com/cdn/shop/files/406059706_122156980568009848_407227644993963468_n.jpg?v=1704785447&width=600" alt="Triumph Bra Detail" class="w-full h-auto rounded-lg product-shadow hover:opacity-90 transition duration-300">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://estoretime.com/cdn/shop/files/z01hq342706w.jpg?v=1704785447&width=600')">
+                    <img src="https://estoretime.com/cdn/shop/files/z01hq342706w.jpg?v=1704785447&width=600" alt="Triumph Bra Detail" class="w-full h-auto rounded-lg product-shadow hover:opacity-90 transition duration-300">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://estoretime.com/cdn/shop/files/jan68_OFF.png?v=1704785447&width=600')">
+                    <img src="https://estoretime.com/cdn/shop/files/jan68_OFF.png?v=1704785447&width=600" alt="Triumph Bra Promo" class="w-full h-auto rounded-lg product-shadow hover:opacity-90 transition duration-300">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://m.media-amazon.com/images/I/71T1BF5tbgL._AC_SY500_.jpg')">
+                    <img src="https://m.media-amazon.com/images/I/71T1BF5tbgL._AC_SY500_.jpg" alt="Triumph Bra Fitur" class="w-full h-auto rounded-lg product-shadow hover:opacity-90 transition duration-300">
+                </div>
+                <div class="cursor-pointer" onclick="openModal('https://softymart.com/cdn/shop/files/rn-image_picker_lib_temp_bfae0fd6-125b-4f7f-ae1b-e96922ccc292_720x.jpg?v=1742509843')">
+                    <img src="https://softymart.com/cdn/shop/files/rn-image_picker_lib_temp_bfae0fd6-125b-4f7f-ae1b-e96922ccc292_720x.jpg?v=1742509843" alt="Triumph Bra Kualitas" class="w-full h-auto rounded-lg product-shadow hover:opacity-90 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Modal -->
+    <div id="imageModal" class="modal">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <img class="modal-content" id="modalImage">
+    </div>
+
+    <!-- Product Details -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-6">Detail Produk</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Bahan Berkualitas Tinggi</h3>
+                        <p class="text-gray-600 mb-4">Triumph Bra dibuat dari bahan microfiber premium yang lembut, elastis, dan tahan lama. Bahan ini memiliki pori-pori kecil yang memungkinkan sirkulasi udara optimal, membuat Anda tetap sejuk dan nyaman sepanjang hari.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Desain Inovatif</h3>
+                        <p class="text-gray-600 mb-4">Dengan desain tanpa kawat yang inovatif, Triumph Bra memberikan dukungan maksimal tanpa rasa tidak nyaman. Garis jahitan yang minimalis mengurangi gesekan dengan kulit.</p>
+                        
+                        <h3 class="text-xl font-semibold text-gray-800 mb-3">Ukuran Inklusif</h3>
+                        <p class="text-gray-600">Tersedia dalam berbagai ukuran dari S hingga XXL, cocok untuk berbagai bentuk tubuh. Kami percaya setiap wanita berhak merasa nyaman dan percaya diri.</p>
+                    </div>
+                </div>
+                
+                <div class="md:w-1/2">
+                    <div class="bg-gray-50 rounded-xl p-6 border border-gray-200">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Spesifikasi Produk</h3>
+                        
+                        <div class="space-y-4">
+                            <div class="flex">
+                                <div class="w-1/3 font-medium text-gray-700">Merek</div>
+                                <div class="w-2/3 text-gray-600">Triumph</div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-1/3 font-medium text-gray-700">Jenis</div>
+                                <div class="w-2/3 text-gray-600">Bra Tanpa Kawat</div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-1/3 font-medium text-gray-700">Bahan</div>
+                                <div class="w-2/3 text-gray-600">Microfiber Premium</div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-1/3 font-medium text-gray-700">Ukuran</div>
+                                <div class="w-2/3 text-gray-600">S, M, L, XL, XXL</div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-1/3 font-medium text-gray-700">Warna</div>
+                                <div class="w-2/3 text-gray-600">Hitam, Nude, Putih, Merah Muda</div>
+                            </div>
+                            <div class="flex">
+                                <div class="w-1/3 font-medium text-gray-700">Perawatan</div>
+                                <div class="w-2/3 text-gray-600">Cuci tangan, Jangan gunakan pemutih</div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-6 pt-6 border-t border-gray-200">
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Garansi 30 hari pengembalian</span>
+                            </div>
+                            <div class="flex items-center mb-3">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Pengiriman cepat 1-3 hari kerja</span>
+                            </div>
+                            <div class="flex items-center">
+                                <i class="fas fa-check-circle text-green-500 mr-2"></i>
+                                <span class="text-gray-700">Original dengan sertifikasi keaslian</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-12 bg-pink-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mb-4">Apa Kata Mereka?</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">Testimoni nyata dari pelanggan kami</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white rounded-xl p-6 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://down-id.img.susercontent.com/file/id-11134103-7ra0s-mbgrgrmnqd2l36.webp" alt="Customer Jessica" class="w-16 h-16 rounded-full object-cover mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Jessica</h4>
+                            <p class="text-sm text-gray-600">Mahasiswa</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">"Sangat nyaman dipakai seharian kuliah. Bahan lembut dan tidak gerah. Ukurannya pas banget!"</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.shopify.com/s/files/1/0401/9139/3950/files/346869173_161827826824461_1468828437743907574_n_480x480.jpg?v=1704738031" alt="Customer Dewi" class="w-16 h-16 rounded-full object-cover mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Dewi</h4>
+                            <p class="text-sm text-gray-600">Ibu Rumah Tangga</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">"Setelah mencoba banyak merek, akhirnya ketemu yang benar-benar nyaman. Tidak ada lagi tali yang melesak atau kawat yang menusuk."</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.shopify.com/s/files/1/0401/9139/3950/files/345599632_770507364554453_2933869158425956989_n_480x480.jpg?v=1704737932" alt="Customer Rina" class="w-16 h-16 rounded-full object-cover mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Rina</h4>
+                            <p class="text-sm text-gray-600">Karyawan Kantor</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star-half-alt text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">"Sempurna untuk dipakai kerja seharian. Tidak perlu sering-sering menyesuaikan posisi bra seperti merek lain."</p>
+                </div>
+                
+                <div class="bg-white rounded-xl p-6 testimonial-card">
+                    <div class="flex items-center mb-4">
+                        <img src="https://cdn.shopify.com/s/files/1/0401/9139/3950/files/346472297_1221815391828776_3865036109087182558_n_480x480.jpg?v=1704738063" alt="Customer Sari" class="w-16 h-16 rounded-full object-cover mr-3">
+                        <div>
+                            <h4 class="font-bold text-gray-800">Sari</h4>
+                            <p class="text-sm text-gray-600">Pengusaha</p>
+                        </div>
+                    </div>
+                    <div class="flex mb-2">
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                        <i class="fas fa-star text-yellow-400"></i>
+                    </div>
+                    <p class="text-gray-600">"Worth it banget harganya. Sudah 6 bulan dipakai hampir tiap hari, bentuk dan elastisitasnya masih bagus seperti baru."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto bg-gradient-to-r from-pink-50 to-blue-50 rounded-xl p-6 md:p-8 border border-pink-200">
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-bold text-gray-800 mb-2">Pesan Triumph Bra Sekarang!</h2>
+                    <p class="text-lg text-gray-600 mb-6">Stok Terbatas - Harga Promo Hari Ini Saja</p>
+                    
+                    <div class="mb-8 bg-gradient-to-r from-pink-100 to-pink-50 p-5 rounded-xl border-2 border-pink-300 shadow-lg">
+                        <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                            <div class="text-center">
+                                <div class="text-sm text-gray-600">Harga Normal</div>
+                                <div class="text-xl font-bold text-gray-500 strikethrough">Rp268.000</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm text-pink-600 font-bold">PROMO HARI INI</div>
+                                <div class="text-5xl font-extrabold text-pink-600 animate-pulse">Rp183.000</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-sm text-gray-600">Anda Hemat</div>
+                                <div class="text-2xl font-bold text-green-600">Rp85.000</div>
+                            </div>
+                        </div>
+                        <div class="mt-4 text-center">
+                            <span class="bg-pink-200 text-pink-800 px-4 py-2 rounded-full text-sm font-bold">PROMO TERBATAS!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-red-50 border border-red-200 rounded-lg p-3 mb-6 max-w-md mx-auto">
+                        <div class="flex items-center justify-center">
+                            <div class="bg-red-100 rounded-full p-2 mr-3">
+                                <i class="fas fa-bolt text-red-500"></i>
+                            </div>
+                            <div class="text-center">
+                                <p class="font-bold text-red-600">CEKOUT CEPAT!</p>
+                                <p class="text-sm text-gray-700">Hanya butuh 1 menit untuk memesan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg p-4 mb-6 border border-pink-200 shadow-sm">
+                    <div class="flex items-center">
+                        <div class="bg-pink-500 text-white rounded-full p-2 mr-3">
+                            <i class="fas fa-gift"></i>
+                        </div>
+                        <div>
+                            <p class="font-bold text-gray-800">BONUS SPESIAL HARI INI!</p>
+                            <p class="text-sm text-gray-700">
+                                <span class="font-bold text-pink-600">✓ Gratis Ongkir</span> + 
+                                <span class="font-bold text-pink-600">✓ Kantong Travel</span> + 
+                                <span class="font-bold text-pink-600">✓ Garansi 30 Hari</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-red-600 text-white rounded-lg p-4 mb-6">
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center">
+                            <div class="bg-white text-red-600 rounded-full p-2 mr-3">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div>
+                                <p class="font-bold">PROMO AKAN BERAKHIR DALAM:</p>
+                            </div>
+                        </div>
+                        <div id="countdown2" class="flex space-x-1">
+                            <div class="bg-white px-3 py-1 rounded text-center">
+                                <span class="font-bold text-lg text-red-600" id="hours2">12</span>
+                                <span class="block text-xs text-red-600">Jam</span>
+                            </div>
+                            <div class="bg-white px-3 py-1 rounded text-center">
+                                <span class="font-bold text-lg text-red-600" id="minutes2">45</span>
+                                <span class="block text-xs text-red-600">Menit</span>
+                            </div>
+                            <div class="bg-white px-3 py-1 rounded text-center">
+                                <span class="font-bold text-lg text-red-600" id="seconds2">30</span>
+                                <span class="block text-xs text-red-600">Detik</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- OrderOnline Embed Form -->
+                <div class="ooef">
+                    <form class="orderonline-embed-form" data-username="rosa" data-product-slug="triumph-bra" data-product-id="68713510fc6367257e0e4bfb" id="oo-embed-form-triumph-bra-6071" data-origin="orderonline">
+                        <div class="ooef-loader"><style>.ooef-loader{visibility: hidden;opacity: 0;position: absolute;left: 0;right: 0;top: 0;bottom: 0;display: flex;justify-content: center;align-items: center;flex-direction: column;animation: ooLoadingIn 10s ease;-webkit-animation: ooLoadingIn 10s ease;animation-fill-mode: forwards;overflow: hidden}@keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}@-webkit-keyframes ooLoadingIn{0%{visibility: hidden;opacity: 0}20%{visibility: visible;opacity: 0}100%{visibility: visible;opacity: 1}}.ooef-loader>div,.ooef-loader>div:after{border-radius: 50%;width: 2.5rem;height: 2.5rem}.ooef-loader>div{font-size: 10px;position: relative;text-indent: -9999em;border: .25rem solid #f5f5f5;border-left: .25rem solid #55c4cf;-webkit-transform: translateZ(0);-ms-transform: translateZ(0);transform: translateZ(0);-webkit-animation: ooLoading 1.1s infinite linear;animation: ooLoading 1.1s infinite linear}.ooef-loader.error>div{border-left: .25rem solid #ff4500;animation-duration: 5s}@-webkit-keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}@keyframes ooLoading{0%{-webkit-transform: rotate(0);transform: rotate(0)}100%{-webkit-transform: rotate(360deg);transform: rotate(360deg)}}</style><div aria-live="polite" role="status"><div>Loading...</div></div></div>
+                    </form>
+                </div>
+                
+                <div class="mt-6 text-center">
+                    <img src="https://int.triumph.com/on/demandware.static/-/Library-Sites-TriumphSharedLibrary/default/dw9c5c1f5d/images/trusted-shops/trusted-shops-guarantee-badge.png" alt="Trusted Badge" class="h-12 mx-auto mb-4">
+                    <p class="text-sm text-gray-600">
+                        <i class="fas fa-lock mr-1"></i> Pembayaran aman melalui sistem terenkripsi
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <img src="https://www.nicepng.com/png/full/277-2777377_triumph-logo-triumph-lingerie-logo.png" alt="Triumph Logo" class="h-8 mr-2">
+                        <span class="text-xl font-bold">Triumph</span>
+                    </div>
+                    <p class="text-gray-400 max-w-xs">Memberikan kenyamanan dan kepercayaan diri untuk wanita Indonesia sejak 2020.</p>
+                </div>
+                
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Tentang Kami</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Tentang Triumph</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Kebijakan Privasi</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Syarat & Ketentuan</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Bantuan</h3>
+                        <ul class="space-y-2">
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Hubungi Kami</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">FAQ</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition">Pengembalian</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-semibold mb-4">Hubungi Kami</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-center">
+                                <i class="fas fa-phone-alt mr-2 text-gray-400"></i>
+                                <span class="text-gray-400">0812-3456-7890</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-envelope mr-2 text-gray-400"></i>
+                                <span class="text-gray-400">cs@triumph.id</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-map-marker-alt mr-2 text-gray-400"></i>
+                                <span class="text-gray-400">Jakarta, Indonesia</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400 text-sm">
+                <p>&copy; 2023 Triumph Indonesia. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- New Order Popup -->
+    <div id="newOrderPopup" class="new-order-popup bg-white rounded-lg shadow-xl p-4 max-w-xs hidden">
+        <div class="flex justify-between items-start mb-2">
+            <div class="flex items-center">
+                <div class="bg-blue-500 text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-2">S</div>
+                <div>
+                    <p class="font-medium text-sm">Siti dari Bandung</p>
+                    <p class="text-xs text-gray-500">Baru saja memesan</p>
+                </div>
+            </div>
+            <button onclick="closePopup()" class="text-gray-400 hover:text-gray-600">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="flex items-center text-sm text-gray-700">
+            <img src="https://estoretime.com/cdn/shop/files/z01hq342705w.jpg?v=1704783708&width=100" alt="Triumph Bra" class="w-10 h-10 rounded mr-2">
+            <span>Triumph Bra - Hitam</span>
+        </div>
+    </div>
+
+    <script>
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const midnight = new Date();
+            midnight.setHours(24, 0, 0, 0);
+            
+            const diff = midnight - now;
+            
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            
+            document.getElementById('hours2').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes2').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds2').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+        
+        // Random Viewers and Stock
+        function updateRandomNumbers() {
+            const viewers = Math.floor(Math.random() * 500) + 1000;
+            const stock = Math.floor(Math.random() * 5) + 5;
+            
+            document.getElementById('viewer-count').textContent = viewers.toLocaleString();
+            document.getElementById('stock-count').textContent = stock;
+        }
+        
+        setInterval(updateRandomNumbers, 5000);
+        updateRandomNumbers();
+        
+        // Image Modal
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('modalImage');
+            
+            modal.style.display = "block";
+            modalImg.src = imageSrc;
+        }
+        
+        function closeModal() {
+            document.getElementById('imageModal').style.display = "none";
+        }
+        
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                const icon = button.querySelector('i');
+                
+                answer.classList.toggle('hidden');
+                icon.classList.toggle('transform');
+                icon.classList.toggle('rotate-180');
+            });
+        });
+        
+        // New Order Popup
+        function showNewOrderPopup() {
+            const popup = document.getElementById('newOrderPopup');
+            popup.classList.remove('hidden');
+            popup.classList.remove('slideOut');
+            popup.classList.add('slideIn');
+            
+            // Change customer data randomly
+            const names = ['Siti', 'Dewi', 'Rina', 'Ani', 'Linda', 'Maya'];
+            const cities = ['Bandung', 'Jakarta', 'Surabaya', 'Medan', 'Yogyakarta', 'Bali'];
+            const initials = ['S', 'D', 'R', 'A', 'L', 'M'];
+            const colors = ['bg-blue-500', 'bg-pink-500', 'bg-purple-500', 'bg-green-500', 'bg-yellow-500'];
+            
+            const randomIndex = Math.floor(Math.random() * names.length);
+            const randomColor = colors[Math.floor(Math.random() * colors.length)];
+            
+            const customerInitial = document.querySelector('.new-order-popup .bg-blue-500');
+            customerInitial.textContent = initials[randomIndex];
+            customerInitial.className = `${randomColor} text-white rounded-full w-8 h-8 flex items-center justify-center font-bold mr-2`;
+            
+            const customerName = document.querySelector('.new-order-popup .font-medium');
+            customerName.textContent = `${names[randomIndex]} dari ${cities[randomIndex]}`;
+            
+            // Auto close after 5 seconds
+            setTimeout(() => {
+                closePopup();
+            }, 5000);
+        }
+        
+        function closePopup() {
+            const popup = document.getElementById('newOrderPopup');
+            popup.classList.remove('slideIn');
+            popup.classList.add('slideOut');
+            
+            setTimeout(() => {
+                popup.classList.add('hidden');
+                // Show again after random time (10-30 seconds)
+                setTimeout(showNewOrderPopup, Math.floor(Math.random() * 20000) + 10000);
+            }, 500);
+        }
+        
+        // Show first popup after 3 seconds
+        setTimeout(showNewOrderPopup, 3000);
+        
+        // Back Notification
+        function showBackNotification() {
+            const notification = document.getElementById('backNotification');
+            notification.classList.remove('hidden');
+        }
+
+        function closeBackNotification() {
+            const notification = document.getElementById('backNotification');
+            notification.classList.add('hidden');
+        }
+
+        // Show notification when user returns to page
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                setTimeout(showBackNotification, 1000);
+            }
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // Initialize OrderOnline embed script
+        if (typeof xLogError != 'function') {
+            var xLogError = function (error) {
+                var req = new XMLHttpRequest();
+                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                req.open('POST', 'https://api.orderonline.id/log', true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                req.send(params);
+            };
+        }
+        
+        try {
+            if (typeof xEmbedScript != 'function') {
+                var xEmbedScript = function () {
+                    !function(w, d, e, v, id, t, s) {
+                        if (d.getElementById(id)) return;
+                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                        s = d.getElementsByTagName(e)[0];
+                        s.parentNode.insertBefore(t, s);
+                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                };
+            }
+            
+            if (typeof xEmbedInit != 'function') {
+                var xEmbedInit = function (w, n) {
+                    if (w.ooe) return;
+                    n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                    if (!w._ooe) w._ooe = n;
+                    n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                };
+            }
+            
+            xEmbedInit(window);
+            ooe('setup', 'redirect', 'https://rosa.orderonline.id');
+            ooe('init', '5f17ee268dcbdb1b55498d78', '68713510fc6367257e0e4bfb', '68713510fc6367257e0e4bfc', 'oo-embed-form-triumph-bra-6071', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false});
+            
+            if (!window.jQuery) {
+                !function(w, d, e, v, id, t, s) {
+                    if (d.getElementById(id)) return;
+                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                    t.addEventListener('load', xEmbedScript);
+                    s = d.getElementsByTagName(e)[0];
+                    s.parentNode.insertBefore(t, s);
+                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+            } else {
+                xEmbedScript();
+            }
+        } catch (e) {
+            xLogError(e);
+            throw e;
+        }
+    </script>
+
+    <!-- Back Notification -->
+    <div id="backNotification" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-white rounded-xl max-w-md w-full p-6 text-center">
+            <div class="bg-pink-100 rounded-full w-20 h-20 flex items-center justify-center mx-auto mb-4">
+                <i class="fas fa-gift text-pink-600 text-3xl"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-2">TUNGGU DULU!</h3>
+            <p class="text-gray-600 mb-4">Kami punya penawaran spesial untuk Anda:</p>
+            <div class="bg-gradient-to-r from-pink-100 to-purple-100 rounded-lg p-3 mb-4">
+                <p class="font-bold text-pink-600 text-lg">GRATIS ONGKIR + POTONGAN Rp25.000</p>
+                <p class="text-sm text-gray-700">Khusus untuk Anda yang kembali ke halaman ini</p>
+            </div>
+            <div class="flex space-x-3">
+                <button onclick="closeBackNotification()" class="flex-1 bg-gray-200 hover:bg-gray-300 text-gray-800 py-2 rounded-lg transition">
+                    Tutup
+                </button>
+                <a href="#order" class="flex-1 bg-pink-600 hover:bg-pink-700 text-white py-2 rounded-lg transition text-center">
+                    Ambil Promo
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
